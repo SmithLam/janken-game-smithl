@@ -7,8 +7,9 @@ body{
 
 h1{
   text-align: center;
-  font-family: Verdana;
+  font-family: Tahoma;
   font-weight: bold;
+  text-shadow: black ;
 }
 
 
@@ -26,22 +27,21 @@ h1{
   flex-direction: column;
   align-items: center;
   border-radius: 30px;
+  border: 5px solid black;
+  box-shadow: 10px 10px black;
 }
 
 .red{
   background-color: red;
-  border: 10px dotted green;
 }
 
 .orange{
   background-color: orange;
-  border: 10px double gray;
 }
 
 
 .blue{
   background-color: blue;
-  border: 10px solid black;
 }
 
 
