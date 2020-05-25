@@ -2,43 +2,64 @@ div{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height:95vh;
-  width:100%;
+  height:100vh;
+  width: 100%;
   margin: 0 auto;
-  border: 1px solid black;
+  background-color: lightgrey;
 }
 
 
 
 .box{
   height:700px;
-  width: 500px;
-  background-color: lightblue;
+  width: 400px;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   align-items: center;
+  border-radius: 30px;
 }
 
 .red{
   background-color: red;
-  border: 10px solid green
+  border: 10px dotted green;
 }
+
+.orange{
+  background-color: orange;
+  border: 10px double gray;
+}
+
 
 .blue{
   background-color: blue;
   border: 10px solid black;
 }
 
-/* .orange{
-  background-color: orange;
-}
 
-.yellow{
+/* .yellow{
   background-color: yellow;
-} */
+} */ 
+
 
 img{
-  height:200px;
-  width:200px;
+  height:400px;
+  width:300px;
+}
+
+p{
+  font-family: Verdana;
+  font-size: 20px;
+  font-variant: small-caps;
+}
+
+.Sword{
+font-style: normal;
+}
+
+.Spear{
+ font-style: oblique;
+}
+
+.Axe{
+ font-style: italic;
 }

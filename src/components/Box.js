@@ -6,9 +6,9 @@ export default function Box(props) {
     return (
         <div className={`box ${props.color}`}  >
         {/* start wrap */}
-        <p>my {props.name} is {props.color}</p>
+        <p className={`para ${props.name}`}>My {props.name} is {props.color}</p>
         <p><img alt="weapon" src={props.src}/></p> 
-        <p>and has {props.status}</p>
+        <p className={`para ${props.name}`}>and has {props.status}!</p>
 
 
 
@@ -16,3 +16,4 @@ export default function Box(props) {
         </div>
     )
 }
+
