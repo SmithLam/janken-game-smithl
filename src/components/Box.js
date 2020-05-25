@@ -15,7 +15,7 @@ export default function Box(props) {
         <p className={`para ${props.name}`}>My {props.name} is {props.color}</p>
         <p><img alt="weapon" src={props.src}/></p> 
         <p className={`para ${props.name}`}>and has {props.status}!</p>
-        <button onClick={()=>callme(props.status)}>Click me!</button>
+        <button onClick={()=>callme(props.status)}>See result!</button>
         {/* end wrap */}
         </div>
     )
