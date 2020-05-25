@@ -1,21 +1,44 @@
+div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:95vh;
+  width:100%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+
+
 .box{
-  height:200px;
-  width: 200px;
+  height:700px;
+  width: 500px;
   background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  align-items: center;
 }
 
 .red{
   background-color: red;
+  border: 10px solid green
 }
 
 .blue{
   background-color: blue;
+  border: 10px solid black;
 }
 
-.orange{
+/* .orange{
   background-color: orange;
 }
 
 .yellow{
   background-color: yellow;
+} */
+
+img{
+  height:200px;
+  width:200px;
 }
