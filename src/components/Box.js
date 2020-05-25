@@ -10,8 +10,6 @@ export default function Box(props) {
         <p><img alt="weapon" src={props.src}/></p> 
         <p className={`para ${props.name}`}>and has {props.status}!</p>
 
-
-
         {/* end wrap */}
         </div>
     )

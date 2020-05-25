@@ -1,17 +1,26 @@
-div{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height:100vh;
-  width: 100%;
+body{
   margin: 0 auto;
-  background-color: lightgrey;
+  background-color: lightgreen;
+  height:100%;
+  width: 100%;
+}
+
+h1{
+  text-align: center;
+  font-family: Verdana;
+  font-weight: bold;
 }
 
 
+.render{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
 
 .box{
-  height:700px;
+  height:600px;
   width: 400px;
   display: flex;
   flex-direction: column;
