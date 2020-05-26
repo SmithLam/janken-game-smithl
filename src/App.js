@@ -40,8 +40,9 @@ if (!localStorage.getItem('GameHistory')){
   const [username, setUsername] = useState(localStorage.getItem('username'))
   const [previousWinner, setPreviousWinner] = useState("")//state
   const [gameHistory, setGameHistory] = useState(JSON.parse(localStorage.getItem('GameHistory')));
-  const [started, setStarted] = useState(false);
-  // let [result, setResult] = useState(null) //state
+  const [started, setStarted] = useState(false);//state
+  const [result, setResult] = useState(null) //state
+  const [resultBox, setResultBox] = useState("")
 
 
 
@@ -83,15 +84,27 @@ if (!localStorage.getItem('GameHistory')){
     setGameHistory(gameHistory)
 
     if (result === "Victory!"){
+      setResult("Victory!")
       setPreviousWinner("You")
+      setResultBox("winner")
     }
     if (result === "Defeat!"){
+      setResult("Defeat!")
       setPreviousWinner("Computer")
+      setResultBox("loser")
     }
     if (result === "Tied!"){
+      setResult("Tied!")
       setPreviousWinner("Tied")
+      setResultBox("tied")
+    }
+    if (gameHistory.length%5===0){
+      console.log(gameHistory.length)
+      setResult("Flawless Victory!")
     }
   }
+
+
 
   return (
     <body>
@@ -104,7 +117,7 @@ if (!localStorage.getItem('GameHistory')){
        <button disabled={!started} onClick ={()=>onplay('paper')}>Paper</button>
        <button disabled={!started} onClick ={()=>onplay('scissors')}>Scissor</button>
        <div>
-       {/* <h1>{result}</h1> */}
+       <div className ={`result-box ${resultBox}`}><h1>{result}</h1></div>
        </div>
        <div>
        <button onClick={() => setStarted(!started)}>Start</button>
