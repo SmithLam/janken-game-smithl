@@ -23,28 +23,3 @@ export default function Box(props) {
 //render component via function
 
 
-//render component via class
-
-// import React, { Component } from 'react'
-// export default class Box extends Component {
-    
-//     //in Class function, you cannot use "let" or "const" only the ES6 way or normal function way
-//     callme = () =>{
-    // alert("You lose")
-//     }
-
-//     render() {
-//         return (
-//         <div className={`box ${this.props.color}`}  >
-//         {/* start wrap */}
-//         <p className={`para ${this.props.name}`}>My {this.props.name} is {this.props.color}</p>
-//         <p><img alt="weapon" src={this.props.src}/></p> 
-//         <p className={`para ${this.props.name}`}>and has {this.props.status}!</p>
-//         <button onClick={()=>this.callme()}>Click me!</button>
-//         {/* end wrap */}
-//         </div>
-//         )
-//     }
-// }
-
-//render component via class
