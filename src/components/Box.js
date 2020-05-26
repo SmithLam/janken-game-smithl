@@ -3,14 +3,12 @@
 import React from 'react'
 
 const DEFAULT_IMG =
-  "http://www.thewateringhole.co.uk/wp-content/uploads/2012/12/play.png";
+  "http://is5.mzstatic.com/image/thumb/Purple118/v4/63/2e/de/632ede7d-21ce-050f-7629-b9f4f0d2f833/source/512x512bb.png";
 
 
 export default function Box(props) {
     
-    const winner = props.title === props.player;
-    //const winner = (props.title === props.player);
-    console.log(props.player)
+    const winner = props.title === props.player; //winner is a boolean comparison 
     let className
     const hasPreviousGame =
       props.player === "Computer" || props.player === "You";
@@ -37,7 +35,6 @@ export default function Box(props) {
         <h1>{props.title} {prompt}</h1>
         <div>{props.title} has chosen {props.choice.name || "nothing"}</div>
         <img alt ={props.choice.name} src={props.choice.url || DEFAULT_IMG}/>
-        {/* <div>{props.title} {prompt}</div> */}
         {/* end wrap */}
         </div>
     )

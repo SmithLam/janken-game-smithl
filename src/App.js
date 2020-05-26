@@ -6,16 +6,16 @@ import Box from './components/Box.js'
 const CHOICES = {
   scissors: {
     name: "scissors",
-    url: "http://www.pngmart.com/files/1/Scissors-PNG-Pic.png"
+    url: "https://cdn0.iconfinder.com/data/icons/rock-paper-scissors-emoji/792/rock-paper-scissors-emoji-cartoon-004-512.png"
   },
   paper: {
     name: "paper",
-    url: "http://pngimagesfree.com/Paper/Thumb/blank-note-paper-free-clipa.png"
+    url: "https://cdn0.iconfinder.com/data/icons/rock-paper-scissors-emoji/792/rock-paper-scissors-emoji-cartoon-019-512.png"
   },
   rock: {
     name: "rock",
     url:
-      "https://opengameart.org/sites/default/files/forum-attachments/very%20simple%20rock_0.png"
+      "https://cdn0.iconfinder.com/data/icons/rock-paper-scissors-emoji/792/rock-paper-scissors-emoji-cartoon-016-512.png"
   }
 };
 
@@ -43,6 +43,7 @@ if (!localStorage.getItem('GameHistory')){
   const [started, setStarted] = useState(false);//state
   const [result, setResult] = useState(null) //state
   const [resultBox, setResultBox] = useState("")
+  let victory = 0
 
 
 
@@ -68,15 +69,25 @@ if (!localStorage.getItem('GameHistory')){
 
     if (userChoice === "rock") {
       result = CHOICES[computerName].name === "scissors" ? "Victory!" : "Defeat!";
+      if (result === "Victory!"){
+        victory++
+      }
     }
     if (userChoice === "paper") {
       result = CHOICES[computerName].name === "rock" ? "Victory!" : "Defeat!";
+      if (result === "Victory!"){
+        victory++
+      }
     }
     if (userChoice === "scissors") {
       result = CHOICES[computerName].name === "paper" ? "Victory!" : "Defeat!";
+      if (result === "Victory!"){
+        victory++
+      }
     }
     if (userChoice === CHOICES[computerName].name) result = "Tied!";
     
+
     console.log(result)
 
     gameHistory.push(username+": "+result);
@@ -98,8 +109,8 @@ if (!localStorage.getItem('GameHistory')){
       setPreviousWinner("Tied")
       setResultBox("tied")
     }
-    if (gameHistory.length%5===0){
-      console.log(gameHistory.length)
+    if(victory === 2){
+      console.log("2 How many victory is there", victory)
       setResult("Flawless Victory!")
     }
   }
@@ -107,26 +118,30 @@ if (!localStorage.getItem('GameHistory')){
 
 
   return (
-    <body>
+    <div className="body">
       <h1>THE JANKEN GAME</h1>
    <div className="render">
      <Box title ="You" choice={userC} player={previousWinner}  />
 
      <div>
-       <button disabled={!started} onClick ={()=>onplay('rock')}>Rock</button>
-       <button disabled={!started} onClick ={()=>onplay('paper')}>Paper</button>
-       <button disabled={!started} onClick ={()=>onplay('scissors')}>Scissor</button>
+       <center>
+       <button id="choice-button" className="btn-primary btn-lg px-3 py-1 mx-3" disabled={!started} onClick ={()=>onplay('rock')}>Rock</button>
+       <button id="choice-button" className="btn-primary btn-lg px-3 py-1 mx-3" disabled={!started} onClick ={()=>onplay('paper')}>Paper</button>
+       <button id="choice-button" className="btn-primary btn-lg px-3 py-1 mx-3" disabled={!started} onClick ={()=>onplay('scissors')}>Scissor</button>
+       </center>
        <div>
-       <div className ={`result-box ${resultBox}`}><h1>{result}</h1></div>
+       <center><div className ={`result-box ${resultBox}`}><h1>{result}</h1></div></center>
        </div>
        <div>
-       <button onClick={() => setStarted(!started)}>Start</button>
-       <input id="input-field" placeholder="username"></input>
-       <button onClick ={() => saveUsername()}>Submit</button>
+         <center>
+       <button onClick={() => setStarted(!started)}>START</button>
+       <input id="input-field" placeholder="Username"></input>
+       <button onClick ={() => saveUsername()}>Sign In</button>
+       </center>
         <center><h3>History {username}</h3> </center>
-        <ul className="history-log">
+        <ul className="history-list">
       {gameHistory.map(result => {
-      return <li>{result}</li>;
+      return <center><li className="history-log">{result}</li></center>;
       })}
 
         </ul>
@@ -136,7 +151,7 @@ if (!localStorage.getItem('GameHistory')){
      <Box title ="Computer" choice={computerC}  player={previousWinner}/>
   
    </div>
-   </body>
+   </div>
   )
 }
 

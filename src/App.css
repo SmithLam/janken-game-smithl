@@ -1,8 +1,9 @@
 body{
   margin: 0 auto;
-  background-color: lightgreen;
+  background-color: lightblue;
   height:100%;
   width: 100%;
+  z-index: -10000;
 }
 
 h1{
@@ -31,15 +32,21 @@ h1{
   box-shadow: 10px 10px black;
 }
 
+#choice-button:disabled{
+  background-color: gray;
+  color: black;
+  border: 1px solid gray;
+}
+
 .result-box{
-  height:50px;
-  width:300px;
+  max-height:100px;
+  width:335px;
+  text-align: center;
 }
 
 .winner{
   border: 5px solid green;
   background-color: green;
-
 }
 
 .loser{
@@ -51,19 +58,19 @@ h1{
   border: 5px solid black;
 }
 
-.history-log{
-  border: 1x solid black;
-}
 
 li {
   padding:10px;
 }
 
-
+ul{
+  list-style: none;
+}
 
 img{
-  height:400px;
+  height:350px;
   width:300px;
+  margin-top:20px;
 }
 
 p{
