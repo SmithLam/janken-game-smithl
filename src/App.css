@@ -31,23 +31,25 @@ h1{
   box-shadow: 10px 10px black;
 }
 
-.red{
+.winner{
+  box-shadow: 10px 10px green;
+  background-color: green;
+
+}
+
+.loser{
+  box-shadow: 10px 10px red;
   background-color: red;
 }
 
-.orange{
-  background-color: orange;
+.history-log{
+  border: 1x solid black;
 }
 
-
-.blue{
-  background-color: blue;
+li {
+  padding:10px;
 }
 
-
-/* .yellow{
-  background-color: yellow;
-} */ 
 
 
 img{
