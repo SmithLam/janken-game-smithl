@@ -41,8 +41,8 @@ if (!localStorage.getItem('GameHistory')){
   const [previousWinner, setPreviousWinner] = useState("")//state
   const [gameHistory, setGameHistory] = useState(JSON.parse(localStorage.getItem('GameHistory')));
   const [started, setStarted] = useState(false);//state
-  const [result, setResult] = useState(null) //state
   const [resultBox, setResultBox] = useState("")
+  const [resultBoxContent, setResultBoxContent] = useState("")
   let victory = 0
 
 
@@ -89,17 +89,19 @@ if (!localStorage.getItem('GameHistory')){
     
     if (result === "Victory!"){
       victory++
-      setResult("Victory!")
+      setResultBoxContent("Victory!")
       setPreviousWinner("You")
       setResultBox("winner")
     }
     if (result === "Defeat!"){
-      setResult("Defeat!")
+      victory=0
+      setResultBoxContent("Defeat!")
       setPreviousWinner("Computer")
       setResultBox("loser")
     }
     if (result === "Tied!"){
-      setResult("Tied!")
+      victory=0
+      setResultBoxContent("Tied!")
       setPreviousWinner("Tied")
       setResultBox("tied")
 
@@ -107,7 +109,7 @@ if (!localStorage.getItem('GameHistory')){
     if(victory === 2){
       result = "Flawless Victory!"
       console.log("2 How many victory is there", victory)
-      setResult("Flawless Victory!")
+      setResultBoxContent("Flawless Victory!")
     }
     console.log(result)
 
@@ -135,7 +137,7 @@ if (!localStorage.getItem('GameHistory')){
        <button id="choice-button" className="btn-primary btn-lg px-3 py-1 mx-3" disabled={!started} onClick ={()=>onplay('scissors')}>Scissor</button>
        </center>
        <div>
-       <center><div className ={`result-box ${resultBox}`}><h1>{result}</h1></div></center>
+       <center><div className ={`result-box ${resultBox}`}><h1>{resultBoxContent}</h1></div></center>
        </div>
        <div>
          <center>
