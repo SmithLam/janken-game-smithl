@@ -69,32 +69,26 @@ if (!localStorage.getItem('GameHistory')){
 
     if (userChoice === "rock") {
       result = CHOICES[computerName].name === "scissors" ? "Victory!" : "Defeat!";
-      if (result === "Victory!"){
-        victory++
-      }
+      // if (result === "Victory!"){
+      //   victory++
+      // }
     }
     if (userChoice === "paper") {
       result = CHOICES[computerName].name === "rock" ? "Victory!" : "Defeat!";
-      if (result === "Victory!"){
-        victory++
-      }
+      // if (result === "Victory!"){
+      //   victory++
+      // }
     }
     if (userChoice === "scissors") {
       result = CHOICES[computerName].name === "paper" ? "Victory!" : "Defeat!";
-      if (result === "Victory!"){
-        victory++
-      }
+      // if (result === "Victory!"){
+      //   victory++
+      // }
     }
     if (userChoice === CHOICES[computerName].name) result = "Tied!";
     
-
-    console.log(result)
-
-    gameHistory.push(username+": "+result);
-    saveResult()
-    setGameHistory(gameHistory)
-
     if (result === "Victory!"){
+      victory++
       setResult("Victory!")
       setPreviousWinner("You")
       setResultBox("winner")
@@ -108,11 +102,19 @@ if (!localStorage.getItem('GameHistory')){
       setResult("Tied!")
       setPreviousWinner("Tied")
       setResultBox("tied")
+
     }
     if(victory === 2){
+      result = "Flawless Victory!"
       console.log("2 How many victory is there", victory)
       setResult("Flawless Victory!")
     }
+    console.log(result)
+
+    gameHistory.push(username+": "+result);
+    saveResult()
+    setGameHistory(gameHistory)
+
   }
 
 
