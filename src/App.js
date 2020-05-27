@@ -112,6 +112,9 @@ if (!localStorage.getItem('GameHistory')){
     console.log(result)
 
     gameHistory.push(username+": "+result);
+    if (gameHistory.length >= 7){
+      gameHistory.splice(0,1)
+    }
     saveResult()
     setGameHistory(gameHistory)
 
