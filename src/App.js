@@ -18,7 +18,7 @@ const CHOICES = {
       "https://cdn0.iconfinder.com/data/icons/rock-paper-scissors-emoji/792/rock-paper-scissors-emoji-cartoon-016-512.png"
   }
 };
-
+let victory = 0
 // render via Function
 function App() {
 const saveUsername = () =>{
@@ -43,7 +43,7 @@ if (!localStorage.getItem('GameHistory')){
   const [started, setStarted] = useState(false);//state
   const [resultBox, setResultBox] = useState("")
   const [resultBoxContent, setResultBoxContent] = useState("")
-  let victory = 0
+
 
 
 
@@ -86,12 +86,12 @@ if (!localStorage.getItem('GameHistory')){
       // }
     }
     if (userChoice === CHOICES[computerName].name) result = "Tied!";
-    
     if (result === "Victory!"){
       victory++
       setResultBoxContent("Victory!")
       setPreviousWinner("You")
       setResultBox("winner")
+      console.log("2 How many victory is there", victory)
     }
     if (result === "Defeat!"){
       victory=0
@@ -104,21 +104,23 @@ if (!localStorage.getItem('GameHistory')){
       setResultBoxContent("Tied!")
       setPreviousWinner("Tied")
       setResultBox("tied")
-
     }
-    if(victory === 2){
+    if(victory === 4){
+      victory=0
       result = "Flawless Victory!"
       console.log("2 How many victory is there", victory)
       setResultBoxContent("Flawless Victory!")
     }
     console.log(result)
 
-    gameHistory.push(username+": "+result);
+    gameHistory.push(username+": "+result)
     if (gameHistory.length >= 7){
       gameHistory.splice(0,1)
     }
+    // setGameHistory([...gameHistory, (username+": "+result)]);//new history
+   
     saveResult()
-    setGameHistory(gameHistory)
+    setGameHistory([...gameHistory])
 
   }
 
@@ -147,9 +149,11 @@ if (!localStorage.getItem('GameHistory')){
        </center>
         <center><h3>History {username}</h3> </center>
         <ul className="history-list">
-      {gameHistory.map(result => {
-      return <center><li className="history-log">{result}</li></center>;
-      })}
+      {gameHistory.map((result, index) => {
+      return <center><li key ={index} className="history-log">{result}</li></center>;
+      }
+      )
+      }
 
         </ul>
        </div>
