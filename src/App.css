@@ -1,29 +1,28 @@
-body{
+body {
   margin: 0 auto;
   background-color: lightblue;
-  height:100%;
+  height: 100%;
   width: 100%;
   z-index: -10000;
 }
 
-h1{
+h1 {
   text-align: center;
   font-family: Tahoma;
   font-weight: bold;
-  text-shadow: black ;
+  text-shadow: black;
 }
 
-
-.render{
+.render {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
 }
 
-.box{
-  height:600px;
-  width: 400px;
+.box {
+  height: 70%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,61 +31,60 @@ h1{
   box-shadow: 10px 10px black;
 }
 
-#choice-button:disabled{
+#choice-button:disabled {
   background-color: gray;
   color: black;
   border: 1px solid gray;
 }
 
-.result-box{
-  max-height:100px;
-  width:335px;
+.result-box {
+  max-height: 100px;
+  width: 335px;
   text-align: center;
 }
 
-.winner{
+.winner {
   border: 5px solid green;
   background-color: green;
 }
 
-.loser{
+.loser {
   border: 5px solid red;
   background-color: red;
 }
 
-.tied{
+.tied {
   border: 5px solid black;
 }
 
-
 li {
-  padding:10px;
+  padding: 10px;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-img{
-  height:350px;
-  width:300px;
-  margin-top:20px;
+img {
+  height: 350px;
+  width: 300px;
+  margin-top: 20px;
 }
 
-p{
+p {
   font-family: Verdana;
   font-size: 20px;
   font-variant: small-caps;
 }
 
-.Sword{
-font-style: normal;
+.Sword {
+  font-style: normal;
 }
 
-.Spear{
- font-style: oblique;
+.Spear {
+  font-style: oblique;
 }
 
-.Axe{
- font-style: italic;
+.Axe {
+  font-style: italic;
 }
